@@ -1,0 +1,538 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "name": "200609_B004_CL_Multicycle",
+            "date": "2020-06-15 09:17:21",
+            "codex_instrument": "CODEX-MPI",
+            "microscope": "KEYENCE",
+            "deconvolution": "Microvolution",
+            "deconvolutionIterations": 25,
+            "deconvolutionModel": "vectorial",
+            "magnification": 20,
+            "numerical_aperture": 0.75,
+            "per_pixel_XY_resolution": 377.442,
+            "z_pitch": 1500.0,
+            "num_z_planes": 11,
+            "channel_arrangement": "grayscale",
+            "channel_names": [
+                "CH1",
+                "CH2",
+                "CH3",
+                "CH4"
+            ],
+            "emission_wavelengths": [
+                425,
+                525,
+                595,
+                670
+            ],
+            "drift_comp_channel": 1,
+            "best_focus_channel": 1,
+            "num_cycles": 23,
+            "cycle_upper_limit": 23,
+            "cycle_lower_limit": 1,
+            "regIdx": [
+                1
+            ],
+            "region_names": [
+                "Region 1"
+            ],
+            "tiling_mode": "snake",
+            "region_width": 7,
+            "region_height": 9,
+            "tile_overlap_X": 576,
+            "tile_overlap_Y": 432,
+            "readout_channels": [
+                2,
+                3,
+                4
+            ],
+            "objectiveType": "air",
+            "HandEstain": true,
+            "tile_height": 1008,
+            "tile_width": 1344,
+            "driftCompReferenceCycle": 1,
+            "bestFocusReferenceCycle": 1,
+            "projName": "",
+            "optionalFocusFragment": false,
+            "focusing_offset": 0,
+            "bgSub": true,
+            "isTMA": false
+        }
+    ],
+    "required": [
+        "name",
+        "date",
+        "codex_instrument",
+        "microscope",
+        "deconvolution",
+        "deconvolutionIterations",
+        "deconvolutionModel",
+        "magnification",
+        "numerical_aperture",
+        "per_pixel_XY_resolution",
+        "z_pitch",
+        "num_z_planes",
+        "channel_arrangement",
+        "channel_names",
+        "emission_wavelengths",
+        "drift_comp_channel",
+        "best_focus_channel",
+        "num_cycles",
+        "cycle_upper_limit",
+        "cycle_lower_limit",
+        "regIdx",
+        "region_names",
+        "tiling_mode",
+        "region_width",
+        "region_height",
+        "tile_overlap_X",
+        "tile_overlap_Y",
+        "readout_channels",
+        "objectiveType",
+        "HandEstain",
+        "tile_height",
+        "tile_width",
+        "driftCompReferenceCycle",
+        "bestFocusReferenceCycle",
+        "projName",
+        "optionalFocusFragment",
+        "focusing_offset",
+        "bgSub",
+        "isTMA"
+    ],
+    "properties": {
+        "name": {
+            "$id": "#/properties/name",
+            "type": "string",
+            "title": "The name schema",
+            "description": "Experiment name",
+            "default": "",
+            "examples": [
+                "200609_B004_CL_Multicycle"
+            ]
+        },
+        "date": {
+            "$id": "#/properties/date",
+            "type": "string",
+            "title": "The date schema",
+            "description": "Date of processing",
+            "default": "",
+            "examples": [
+                "2020-06-15 09:17:21"
+            ]
+        },
+        "codex_instrument": {
+            "$id": "#/properties/codex_instrument",
+            "type": "string",
+            "title": "The codex_instrument schema",
+            "description": "CODEX Instrument name",
+            "default": "",
+            "examples": [
+                "CODEX-MPI"
+            ]
+        },
+        "microscope": {
+            "$id": "#/properties/microscope",
+            "type": "string",
+            "title": "The microscope schema",
+            "description": "Miscorscope name",
+            "default": "",
+            "examples": [
+                "KEYENCE"
+            ]
+        },
+        "deconvolution": {
+            "$id": "#/properties/deconvolution",
+            "type": "string",
+            "title": "The deconvolution schema",
+            "description": "TMC - Deconvolution method",
+            "default": "",
+            "examples": [
+                "Microvolution"
+            ]
+        },
+        "deconvolutionIterations": {
+            "$id": "#/properties/deconvolutionIterations",
+            "type": "integer",
+            "title": "The deconvolutionIterations schema",
+            "description": "TMC - Number of deconvolution iterations",
+            "default": 0,
+            "examples": [
+                25
+            ]
+        },
+        "deconvolutionModel": {
+            "$id": "#/properties/deconvolutionModel",
+            "type": "string",
+            "title": "The deconvolutionModel schema",
+            "description": "TMC - Deconvolution model",
+            "default": "",
+            "examples": [
+                "vectorial"
+            ]
+        },
+        "magnification": {
+            "$id": "#/properties/magnification",
+            "type": "integer",
+            "title": "The magnification schema",
+            "description": "Objective magnification",
+            "default": 0,
+            "examples": [
+                20
+            ]
+        },
+        "numerical_aperture": {
+            "$id": "#/properties/numerical_aperture",
+            "type": "number",
+            "title": "The numerical_aperture schema",
+            "description": "Numerical aperture",
+            "default": 0.0,
+            "examples": [
+                0.75
+            ]
+        },
+        "per_pixel_XY_resolution": {
+            "$id": "#/properties/per_pixel_XY_resolution",
+            "type": "number",
+            "title": "The per_pixel_XY_resolution schema",
+            "description": "Lateral resolution",
+            "default": 0.0,
+            "examples": [
+                377.442
+            ]
+        },
+        "z_pitch": {
+            "$id": "#/properties/z_pitch",
+            "type": "number",
+            "title": "The z_pitch schema",
+            "description": "Axial resolution",
+            "default": 0.0,
+            "examples": [
+                1500.0
+            ]
+        },
+        "num_z_planes": {
+            "$id": "#/properties/num_z_planes",
+            "type": "integer",
+            "title": "The num_z_planes schema",
+            "description": "Number of z-planes",
+            "minimum": 1,
+            "default": 1,
+            "examples": [
+                11
+            ]
+        },
+        "channel_arrangement": {
+            "$id": "#/properties/channel_arrangement",
+            "type": "string",
+            "title": "The channel_arrangement schema",
+            "description": "Channel arrangement",
+            "default": "",
+            "examples": [
+                "grayscale"
+            ]
+        },
+        "channel_names": {
+            "$id": "#/properties/channel_names",
+            "type": "array",
+            "title": "The channel_names schema",
+            "description": "How channel names appear in file names",
+            "default": [],
+            "items": {"type": "string"},
+            "examples": [
+                [
+                    "CH1",
+                    "CH2"
+                ]
+            ],
+            "additionalItems": true
+        },
+        "emission_wavelengths": {
+            "$id": "#/properties/emission_wavelengths",
+            "type": "array",
+            "title": "The emission_wavelengths schema",
+            "description": "Emission wavelengths",
+            "default": [],
+            "items": {"type": "integer"},
+            "examples": [
+                [
+                    425,
+                    525
+                ]
+            ],
+            "additionalItems": true
+        },
+        "drift_comp_channel": {
+            "$id": "#/properties/drift_comp_channel",
+            "type": "integer",
+            "title": "The drift_comp_channel schema",
+            "description": "Id of the channel to be used for registration",
+            "minimum": 1,
+            "default": 1,
+            "examples": [
+                1
+            ]
+        },
+        "best_focus_channel": {
+            "$id": "#/properties/best_focus_channel",
+            "type": "integer",
+            "title": "The best_focus_channel schema",
+            "description": "Id of the channel to be used for best z-plane estimation",
+            "minimum": 1,
+            "default": 1,
+            "examples": [
+                1
+            ]
+        },
+        "num_cycles": {
+            "$id": "#/properties/num_cycles",
+            "type": "integer",
+            "title": "The num_cycles schema",
+            "description": "Number of cycles",
+            "minimum": 1,
+            "default": 1,
+            "examples": [
+                23
+            ]
+        },
+        "cycle_upper_limit": {
+            "$id": "#/properties/cycle_upper_limit",
+            "type": "integer",
+            "title": "The cycle_upper_limit schema",
+            "description": "Maximum cycle id in the dataset",
+            "minimum": 1,
+            "default": 1,
+            "examples": [
+                23
+            ]
+        },
+        "cycle_lower_limit": {
+            "$id": "#/properties/cycle_lower_limit",
+            "type": "integer",
+            "title": "The cycle_lower_limit schema",
+            "description": "First cycle id in the dataset",
+            "minimum": 1,
+            "default": 1,
+            "examples": [
+                1
+            ]
+        },
+        "regIdx": {
+            "$id": "#/properties/regIdx",
+            "type": "array",
+            "title": "The regIdx schema",
+            "description": "Region ids",
+            "items": {"type":"integer"},
+            "uniqueItems": true,
+            "default": [],
+            "examples": [
+                [
+                    1
+                ]
+            ],
+            "additionalItems": true
+        },
+        "region_names": {
+            "$id": "#/properties/region_names",
+            "type": "array",
+            "title": "The region_names schema",
+            "description": "An explanation about the purpose of this instance.",
+            "items": {"type":"string"},
+            "default": [],
+            "examples": [
+                [
+                    "Region 1"
+                ]
+            ],
+            "additionalItems": true
+        },
+        "tiling_mode": {
+            "$id": "#/properties/tiling_mode",
+            "type": "string",
+            "title": "The tiling_mode schema",
+            "description": "Tiling mode",
+            "default": "snake",
+            "examples": [
+                "snake"
+            ]
+        },
+        "region_width": {
+            "$id": "#/properties/region_width",
+            "type": "integer",
+            "title": "The region_width schema",
+            "description": "Number of tiles in x direction",
+            "minimum": 1,
+            "default": 1,
+            "examples": [
+                7
+            ]
+        },
+        "region_height": {
+            "$id": "#/properties/region_height",
+            "type": "integer",
+            "title": "The region_height schema",
+            "description": "Number of tiles in y direction",
+            "minimum": 1,
+            "default": 1,
+            "examples": [
+                9
+            ]
+        },
+        "tile_overlap_X": {
+            "$id": "#/properties/tile_overlap_X",
+            "type": "integer",
+            "title": "The tile_overlap_X schema",
+            "description": "Horizontal overlap between adjacent tiles in pixels",
+            "default": 0,
+            "examples": [
+                576
+            ]
+        },
+        "tile_overlap_Y": {
+            "$id": "#/properties/tile_overlap_Y",
+            "type": "integer",
+            "title": "The tile_overlap_Y schema",
+            "description": "Vertical overlap between adjacent tiles  in pixels",
+            "default": 0,
+            "examples": [
+                432
+            ]
+        },
+        "readout_channels": {
+            "$id": "#/properties/readout_channels",
+            "type": "array",
+            "title": "The readout_channels schema",
+            "description": "No idea what are they",
+            "items":{"type": "integer"},
+            "default": [],
+            "examples": [
+                [
+                    2,
+                    3
+                ]
+            ],
+            "additionalItems": true
+        },
+        "objectiveType": {
+            "$id": "#/properties/objectiveType",
+            "type": "string",
+            "title": "The objectiveType schema",
+            "description": "Objective type",
+            "default": "",
+            "examples": [
+                "air"
+            ]
+        },
+        "HandEstain": {
+            "$id": "#/properties/HandEstain",
+            "type": "boolean",
+            "title": "The HandEstain schema",
+            "description": "Whether HnE stained cycles are present",
+            "default": false,
+            "examples": [
+                true
+            ]
+        },
+        "tile_height": {
+            "$id": "#/properties/tile_height",
+            "type": "integer",
+            "title": "The tile_height schema",
+            "description": "Tile height without overlap",
+            "minimum": 1,
+            "default": 1,
+            "examples": [
+                1008
+            ]
+        },
+        "tile_width": {
+            "$id": "#/properties/tile_width",
+            "type": "integer",
+            "title": "The tile_width schema",
+            "description": "Tile width without overlap",
+            "minimum": 1,
+            "default": 1,
+            "examples": [
+                1344
+            ]
+        },
+        "driftCompReferenceCycle": {
+            "$id": "#/properties/driftCompReferenceCycle",
+            "type": "integer",
+            "title": "The driftCompReferenceCycle schema",
+            "description": "Id of the cycle that contains reference channel",
+            "minimum": 1,
+            "default": 1,
+            "examples": [
+                1
+            ]
+        },
+        "bestFocusReferenceCycle": {
+            "$id": "#/properties/bestFocusReferenceCycle",
+            "type": "integer",
+            "title": "The bestFocusReferenceCycle schema",
+            "description": "AId of the cycle that contains reference channel",
+            "default": 0,
+            "examples": [
+                1
+            ]
+        },
+        "projName": {
+            "$id": "#/properties/projName",
+            "type": "string",
+            "title": "The projName schema",
+            "description": "Project name",
+            "default": "",
+            "examples": [
+                ""
+            ]
+        },
+        "optionalFocusFragment": {
+            "$id": "#/properties/optionalFocusFragment",
+            "type": "boolean",
+            "title": "The optionalFocusFragment schema",
+            "description": "TMC - some internal parameters",
+            "default": false,
+            "examples": [
+                false
+            ]
+        },
+        "focusing_offset": {
+            "$id": "#/properties/focusing_offset",
+            "type": "integer",
+            "title": "The focusing_offset schema",
+            "description": "TMC - some internal parameters",
+            "default": 0,
+            "examples": [
+                0
+            ]
+        },
+        "bgSub": {
+            "$id": "#/properties/bgSub",
+            "type": "boolean",
+            "title": "The bgSub schema",
+            "description": "TMC - some internal parameters",
+            "default": false,
+            "examples": [
+                true
+            ]
+        },
+        "isTMA": {
+            "$id": "#/properties/isTMA",
+            "type": "boolean",
+            "title": "The isTMA schema",
+            "description": "TMC - some internal parameters",
+            "default": false,
+            "examples": [
+                false
+            ]
+        }
+    },
+    "additionalProperties": true
+}

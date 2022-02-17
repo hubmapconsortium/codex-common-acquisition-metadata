@@ -1,0 +1,59 @@
+{
+    "name": "200609_B004_CL_Multicycle",
+    "date": "2020-06-15 09:17:21",
+    "codex_instrument": "CODEX-MPI",
+    "microscope": "KEYENCE",
+    "deconvolution": "Microvolution",
+    "deconvolutionIterations": 25,
+    "deconvolutionModel": "vectorial",
+    "magnification": 20,
+    "numerical_aperture": 0.75,
+    "per_pixel_XY_resolution": 377.442,
+    "z_pitch": 1500.0,
+    "num_z_planes": 11,
+    "channel_arrangement": "grayscale",
+    "channel_names": [
+        "CH1",
+        "CH2",
+        "CH3",
+        "CH4"
+    ],
+    "emission_wavelengths": [
+        425,
+        525,
+        595,
+        670
+    ],
+    "drift_comp_channel": 1,
+    "best_focus_channel": 1,
+    "num_cycles": 23,
+    "cycle_upper_limit": 23,
+    "cycle_lower_limit": 1,
+    "regIdx": [
+        1
+    ],
+    "region_names": [
+        "Region 1"
+    ],
+    "tiling_mode": "snake",
+    "region_width": 7,
+    "region_height": 9,
+    "tile_overlap_X": 576,
+    "tile_overlap_Y": 432,
+    "readout_channels": [
+        2,
+        3,
+        4
+    ],
+    "objectiveType": "air",
+    "HandEstain": true,
+    "tile_height": 1008,
+    "tile_width": 1344,
+    "driftCompReferenceCycle": 1,
+    "bestFocusReferenceCycle": 1,
+    "projName": "",
+    "optionalFocusFragment": false,
+    "focusing_offset": 0,
+    "bgSub": true,
+    "isTMA": false
+}

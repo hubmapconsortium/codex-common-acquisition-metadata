@@ -1,0 +1,170 @@
+{
+  "version": "1.7.0.6",
+  "name": "src_CX_19-002_CC2-spleen-A",
+  "runName": "2020-02-10",
+  "dateProcessed": "2020-02-10T16:01:15.357-05:00[America/New_York]",
+  "path": "G:\\SHARE\\HuBMAP\\Codex_dataset_hubmap\\src_CX_19-002_CC2-spleen-A",
+  "outputPath": "G:\\SHARE\\HuBMAP\\Codex_dataset_hubmap\\src_CX_19-002_CC2-spleen-A",
+  "objectiveType": "air",
+  "magnification": 20,
+  "aperture": 0.75,
+  "xyResolution": 377.4463383838384,
+  "zPitch": 1500.0,
+  "wavelengths": [
+    358,
+    488,
+    550,
+    650
+  ],
+  "bitDepth": 16,
+  "numRegions": 1,
+  "numCycles": 9,
+  "numZPlanes": 13,
+  "numChannels": 4,
+  "regionWidth": 9,
+  "regionHeight": 9,
+  "tileWidth": 1920,
+  "tileHeight": 1440,
+  "tileOverlapX": 0.3,
+  "tileOverlapY": 0.3,
+  "tilingMode": "snakerows",
+  "referenceCycle": 2,
+  "referenceChannel": 1,
+  "numSubTiles": 1,
+  "deconvolutionIterations": 25,
+  "deconvolutionModel": "vectorial",
+  "focusingOffset": 0,
+  "useBackgroundSubtraction": true,
+  "useDeconvolution": true,
+  "useExtendedDepthOfField": true,
+  "useShadingCorrection": true,
+  "use3dDriftCompensation": true,
+  "useBleachMinimizingCrop": false,
+  "useBlindDeconvolution": false,
+  "useDiagnosticMode": true,
+  "channelNames": {
+    "channelNamesArray": [
+      "DAPI-01",
+      "Blank",
+      "Blank",
+      "Blank",
+      "DAPI-02",
+      "CD31",
+      "CD8",
+      "CD45",
+      "DAPI-03",
+      "CD20",
+      "Ki67",
+      "CD3e",
+      "DAPI-04",
+      "Actin",
+      "Podoplan",
+      "CD68",
+      "DAPI-05",
+      "PanCK",
+      "CD21",
+      "CD4",
+      "DAPI-06",
+      "Empty",
+      "CD45RO",
+      "CD11c",
+      "DAPI-07",
+      "Empty",
+      "E-CAD",
+      "CD107a",
+      "DAPI-08",
+      "Empty",
+      "CD44",
+      "H3",
+      "DAPI-09",
+      "Blank",
+      "Blank",
+      "Blank"
+    ]
+  },
+  "exposureTimes": {
+    "exposureTimesArray": [
+      [
+        "Cycle",
+        "CH1",
+        "CH2",
+        "CH3",
+        "CH4"
+      ],
+      [
+        "1",
+        "10",
+        "500",
+        "350",
+        "500"
+      ],
+      [
+        "2",
+        "10",
+        "500",
+        "350",
+        "500"
+      ],
+      [
+        "3",
+        "10",
+        "500",
+        "350",
+        "500"
+      ],
+      [
+        "4",
+        "10",
+        "500",
+        "350",
+        "500"
+      ],
+      [
+        "5",
+        "10",
+        "500",
+        "350",
+        "500"
+      ],
+      [
+        "6",
+        "10",
+        "500",
+        "350",
+        "500"
+      ],
+      [
+        "7",
+        "10",
+        "500",
+        "350",
+        "500"
+      ],
+      [
+        "8",
+        "10",
+        "500",
+        "350",
+        "500"
+      ],
+      [
+        "9",
+        "10",
+        "500",
+        "350",
+        "500"
+      ]
+    ]
+  },
+  "projName": "src_CX_19-002_CC2-spleen-A",
+  "regIdx": [
+    1
+  ],
+  "cycle_lower_limit": 1,
+  "cycle_upper_limit": 9,
+  "num_z_planes": 1,
+  "region_width": 9,
+  "region_height": 9,
+  "tile_width": 1344,
+  "tile_height": 1008
+}
