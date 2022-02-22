@@ -8,7 +8,7 @@
     "AcquisitionMode": "Confocal",
     "ImmersionMedium": "Air",
     "NominalMagnification": 40,
-    "NumericalAperture": 1,
+    "NumericalAperture": 1.0,
     "ResolutionX": 300.0,
     "ResolutionXUnit": "nm",
     "ResolutionY": 300.0,
@@ -42,7 +42,7 @@
                 "ExcitationWavelengthNM": 350,
                 "EmissionWavelengthNM": 450,
                 "Binning": 1,
-                "Gain": 1
+                "Gain": 1.0
             },
             {
                 "Name": "CD31",
@@ -54,7 +54,7 @@
                 "ExcitationWavelengthNM": 650,
                 "EmissionWavelengthNM": 660,
                 "Binning": 1,
-                "Gain": 1
+                "Gain": 1.0
             }
         ]
     }

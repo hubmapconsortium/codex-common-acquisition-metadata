@@ -16,7 +16,7 @@
             "AcquisitionMode": "Confocal",
             "ImmersionMedium": "Air",
             "NominalMagnification": 40,
-            "NumericalAperture": 1,
+            "NumericalAperture": 1.0,
             "ResolutionX": 300,
             "ResolutionXUnit": "nm",
             "ResolutionY": 300,
@@ -51,7 +51,7 @@
                         "ExcitationWavelengthNM": 350,
                         "EmissionWavelengthNM": 450,
                         "Binning": 1,
-                        "Gain": 1
+                        "Gain": 1.0
                     },
                     {
                         "Name": "CD31",
@@ -63,7 +63,7 @@
                         "ExcitationWavelengthNM": 650,
                         "EmissionWavelengthNM": 660,
                         "Binning": 1,
-                        "Gain": 1
+                        "Gain": 1.0
                     }
                 ]
             }
@@ -204,7 +204,7 @@
         "NumericalAperture": {
             "$id": "#/properties/NumericalAperture",
             "type": "number",
-            "minimum": 0.0,
+            "minimum": 0.1,
             "title": "The NumericalAperture schema",
             "description": "The numerical aperture of the objective.",
             "default": 0.1,
@@ -474,7 +474,9 @@
                             "QCDetails": "if QC failed why",
                             "ExposureTimeMS": 10.0,
                             "ExcitationWavelengthNM": 350,
-                            "EmissionWavelengthNM": 450
+                            "EmissionWavelengthNM": 450,
+                            "Binning": 1,
+                            "Gain": 1.0
                         },
                         {
                             "Name": "CD31",
@@ -484,7 +486,9 @@
                             "QCDetails": "None",
                             "ExposureTimeMS": 100.0,
                             "ExcitationWavelengthNM": 650,
-                            "EmissionWavelengthNM": 660
+                            "EmissionWavelengthNM": 660,
+                            "Binning": 1,
+                            "Gain": 1.0
                         }
                     ]
                 }
@@ -511,7 +515,7 @@
                                 "ExcitationWavelengthNM": 350,
                                 "EmissionWavelengthNM": 450,
                                 "Binning": 1,
-                                "Gain": 1
+                                "Gain": 1.0
                             },
                             {
                                 "Name": "CD31",
@@ -523,7 +527,7 @@
                                 "ExcitationWavelengthNM": 650,
                                 "EmissionWavelengthNM": 660,
                                 "Binning": 1,
-                                "Gain": 1
+                                "Gain": 1.0
                             }
                         ]
                     ],
@@ -548,7 +552,7 @@
                                         "ExcitationWavelengthNM": 350,
                                         "EmissionWavelengthNM": 450,
                                         "Binning": 1,
-                                        "Gain": 1
+                                        "Gain": 1.0
                                     }
                                 ],
                                 "required": [
@@ -661,13 +665,13 @@
                                     },
                                      "Gain": {
                                         "$id": "#/properties/ChannelDetails/properties/ChannelDetailsArray/items/allOf/0/properties/Gain",
-                                        "type": "integer",
-                                        "minimum": 1,
+                                        "type": "number",
+                                        "minimum": 1.0,
                                         "title": "The Gain schema",
                                         "description": "Amplification applied to the detector signal.",
-                                        "default": 1,
+                                        "default": 1.0,
                                         "examples": [
-                                            1
+                                            1.0
                                         ]
                                     }
                                 },
