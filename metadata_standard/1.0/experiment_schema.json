@@ -11,7 +11,7 @@
             "DatasetName": "Some recognizable name",
             "AcquisitionDate": "2020-02-19T13:51:35.857-05:00[America/New_York]",
             "AssayType": "CODEX",
-            "AssayVersion": "1.x",
+            "AssaySpecificSoftware": "Akoya CODEX Instrument Manager 1.29, Akoya CODEX Processor 1.7.6",
             "Microscope": "Sony, Nikon, Zeiss",
             "AcquisitionMode": "Confocal",
             "ImmersionMedium": "Air",
@@ -36,19 +36,20 @@
             "TileOverlapY": 0.3,
             "TileLayout": "snake",
             "NuclearStain": [
-                {"Cycle": 2, "Channel": 1}
+                {"CycleID": 2, "ChannelID": 1}
             ],
             "MembraneStain": [
-                {"Cycle": 2, "Channel": 3},
-                {"Cycle": 3, "Channel": 4}
+                {"CycleID": 2, "ChannelID": 3},
+                {"CycleID": 3, "ChannelID": 4}
             ],
-            "NuclearStainForSegmentation": {"Cycle": 2, "Channel": 1},
-            "MembraneStainForSegmentation": {"Cycle": 3, "Channel": 4},
+            "NuclearStainForSegmentation": {"CycleID": 2, "ChannelID": 1},
+            "MembraneStainForSegmentation": {"CycleID": 3, "ChannelID": 4},
             "ChannelDetails": {
                 "ChannelDetailsArray": [
                     {
                         "Name": "DAPI-01",
-                        "Cycle": 1,
+                        "ChannelID": 1,
+                        "CycleID": 1,
                         "Fluorophore": "DAPI",
                         "PassedQC": true,
                         "QCDetails": "if QC failed why",
@@ -60,7 +61,8 @@
                     },
                     {
                         "Name": "CD31",
-                        "Cycle": 1,
+                        "ChannelID": 2,
+                        "CycleID": 1,
                         "Fluorophore": "Cy5",
                         "PassedQC": true,
                         "QCDetails": "None",
@@ -79,7 +81,7 @@
         "DatasetName",
         "AcquisitionDate",
         "AssayType",
-        "AssayVersion",
+        "AssaySpecificSoftware",
         "Microscope",
         "AcquisitionMode",
         "ImmersionMedium",
@@ -151,14 +153,14 @@
                 "CODEX"
             ]
         },
-        "AssayVersion": {
-            "$id": "#/properties/AssayVersion",
+        "AssaySpecificSoftware": {
+            "$id": "#/properties/AssaySpecificSoftware",
             "type": "string",
-            "title": "The AssayVersion schema",
-            "description": "The version of the assay.",
+            "title": "The AssaySpecificSoftware schema",
+            "description": "The comma separated list of company, name and version of the assay specific software used for this dataset.",
             "default": "None",
             "examples": [
-                "1.x"
+                "Akoya CODEX Instrument Manager 1.29, Akoya CODEX Processor 1.7.6 "
             ]
         },
         "Microscope": {
@@ -429,8 +431,8 @@
             "examples": [
                 [
                     {
-                        "Cycle": 1,
-                        "Channel": 1
+                        "CycleID": 1,
+                        "ChannelID": 1
                     }
                 ]
             ],
@@ -446,17 +448,17 @@
                         "default": {},
                         "examples": [
                             {
-                                "Cycle": 1,
-                                "Channel": 1
+                                "CycleID": 1,
+                                "ChannelID": 1
                             }
                         ],
                         "required": [
-                            "Cycle",
-                            "Channel"
+                            "CycleID",
+                            "ChannelID"
                         ],
                         "properties": {
-                            "Cycle": {
-                                "$id": "#/properties/NuclearStain/items/allOf/0/properties/Cycle",
+                            "CycleID": {
+                                "$id": "#/properties/NuclearStain/items/allOf/0/properties/CycleID",
                                 "type": "integer",
                                 "minimum": 1,
                                 "title": "The Cycle schema",
@@ -466,8 +468,8 @@
                                     1
                                 ]
                             },
-                            "Channel": {
-                                "$id": "#/properties/NuclearStain/items/allOf/0/properties/Channel",
+                            "ChannelID": {
+                                "$id": "#/properties/NuclearStain/items/allOf/0/properties/ChannelID",
                                 "type": "integer",
                                 "minimum": 1,
                                 "title": "The Channel schema",
@@ -494,12 +496,12 @@
             "examples": [
                 [
                     {
-                        "Cycle": 2,
-                        "Channel": 3
+                        "CycleID": 2,
+                        "ChannelID": 3
                     },
                     {
-                        "Cycle": 3,
-                        "Channel": 4
+                        "CycleID": 3,
+                        "ChannelID": 4
                     }
                 ]
             ],
@@ -515,17 +517,17 @@
                         "default": {},
                         "examples": [
                             {
-                                "Cycle": 2,
-                                "Channel": 3
+                                "CycleID": 2,
+                                "ChannelID": 3
                             }
                         ],
                         "required": [
-                            "Cycle",
-                            "Channel"
+                            "CycleID",
+                            "ChannelID"
                         ],
                         "properties": {
-                            "Cycle": {
-                                "$id": "#/properties/MembraneStain/items/allOf/0/properties/Cycle",
+                            "CycleID": {
+                                "$id": "#/properties/MembraneStain/items/allOf/0/properties/CycleID",
                                 "type": "integer",
                                 "minimum": 1,
                                 "title": "The Cycle schema",
@@ -535,8 +537,8 @@
                                     2
                                 ]
                             },
-                            "Channel": {
-                                "$id": "#/properties/MembraneStain/items/allOf/0/properties/Channel",
+                            "ChannelID": {
+                                "$id": "#/properties/MembraneStain/items/allOf/0/properties/ChannelID",
                                 "type": "integer",
                                 "minimum": 1,
                                 "title": "The Channel schema",
@@ -560,17 +562,17 @@
             "default": {},
             "examples": [
                 {
-                    "Cycle": 2,
-                    "Channel": 1
+                    "CycleID": 2,
+                    "ChannelID": 1
                 }
             ],
             "required": [
-                "Cycle",
-                "Channel"
+                "CycleID",
+                "ChannelID"
             ],
             "properties": {
-                "Cycle": {
-                    "$id": "#/properties/NuclearStainForSegmentation/properties/Cycle",
+                "CycleID": {
+                    "$id": "#/properties/NuclearStainForSegmentation/properties/CycleID",
                     "type": "integer",
                     "minimum": 1,
                     "title": "The Cycle schema",
@@ -580,8 +582,8 @@
                         2
                     ]
                 },
-                "Channel": {
-                    "$id": "#/properties/NuclearStainForSegmentation/properties/Channel",
+                "ChannelID": {
+                    "$id": "#/properties/NuclearStainForSegmentation/properties/ChannelID",
                     "type": "integer",
                     "minimum": 1,
                     "title": "The Channel schema",
@@ -602,17 +604,17 @@
             "default": {},
             "examples": [
                 {
-                    "Cycle": 3,
-                    "Channel": 4
+                    "CycleID": 3,
+                    "ChannelID": 4
                 }
             ],
             "required": [
-                "Cycle",
-                "Channel"
+                "CycleID",
+                "ChannelID"
             ],
             "properties": {
-                "Cycle": {
-                    "$id": "#/properties/MembraneStainForSegmentation/properties/Cycle",
+                "CycleID": {
+                    "$id": "#/properties/MembraneStainForSegmentation/properties/CycleID",
                     "type": "integer",
                     "minimum": 1,
                     "title": "The Cycle schema",
@@ -622,8 +624,8 @@
                         3
                     ]
                 },
-                "Channel": {
-                    "$id": "#/properties/MembraneStainForSegmentation/properties/Channel",
+                "ChannelID": {
+                    "$id": "#/properties/MembraneStainForSegmentation/properties/ChannelID",
                     "type": "integer",
                     "minimum": 1,
                     "title": "The Channel schema",
@@ -647,7 +649,8 @@
                     "ChannelDetailsArray": [
                         {
                             "Name": "DAPI-01",
-                            "Cycle": 1,
+                            "ChannelID": 1,
+                            "CycleID": 1,
                             "Fluorophore": "DAPI",
                             "PassedQC": true,
                             "QCDetails": "if QC failed why",
@@ -659,7 +662,8 @@
                         },
                         {
                             "Name": "CD31",
-                            "Cycle": 1,
+                            "ChannelID": 2,
+                            "CycleID": 1,
                             "Fluorophore": "Cy5",
                             "PassedQC": true,
                             "QCDetails": "None",
@@ -688,7 +692,8 @@
                         [
                             {
                                 "Name": "DAPI-01",
-                                "Cycle": 1,
+                                "ChannelID": 1,
+                                "CycleID": 1,
                                 "Fluorophore": "DAPI",
                                 "PassedQC": true,
                                 "QCDetails": "if QC failed why",
@@ -700,7 +705,8 @@
                             },
                             {
                                 "Name": "CD31",
-                                "Cycle": 1,
+                                "ChannelID": 2,
+                                "CycleID": 1,
                                 "Fluorophore": "Cy5",
                                 "PassedQC": true,
                                 "QCDetails": "None",
@@ -725,7 +731,8 @@
                                 "examples": [
                                     {
                                         "Name": "DAPI-01",
-                                        "Cycle": 1,
+                                        "ChannelID": 1,
+                                        "CycleID": 1,
                                         "Fluorophore": "DAPI",
                                         "PassedQC": true,
                                         "QCDetails": "if QC failed why",
@@ -738,7 +745,8 @@
                                 ],
                                 "required": [
                                     "Name",
-                                    "Cycle",
+                                    "ChannelID",
+                                    "CycleID",
                                     "Fluorophore",
                                     "PassedQC",
                                     "QCDetails",
@@ -759,11 +767,22 @@
                                             "DAPI-01"
                                         ]
                                     },
-                                    "Cycle": {
-                                        "$id": "#/properties/ChannelDetails/properties/ChannelDetailsArray/items/allOf/0/properties/Cycle",
+                                    "ChannelID": {
+                                        "$id": "#/properties/ChannelDetails/properties/ChannelDetailsArray/items/allOf/0/properties/ChannelID",
                                         "type": "integer",
                                         "minimum": 1,
-                                        "title": "The Cycle schema",
+                                        "title": "The ChannelID schema",
+                                        "description": "The id of the imaging channel.",
+                                        "default": 1,
+                                        "examples": [
+                                            1
+                                        ]
+                                    },
+                                    "CycleID": {
+                                        "$id": "#/properties/ChannelDetails/properties/ChannelDetailsArray/items/allOf/0/properties/CycleID",
+                                        "type": "integer",
+                                        "minimum": 1,
+                                        "title": "The CycleID schema",
                                         "description": "The id of the imaging cycle.",
                                         "default": 1,
                                         "examples": [

@@ -3,7 +3,7 @@
     "DatasetName": "Some recognizable name",
     "AcquisitionDate": "2020-02-19T13:51:35.857-05:00[America/New_York]",
     "AssayType": "CODEX",
-    "AssayVersion": "1.x",
+    "AssaySpecificSoftware": "Akoya CODEX Instrument Manager 1.29, Akoya CODEX Processor 1.7.6",
     "Microscope": "Sony, Nikon, Zeiss",
     "AcquisitionMode": "Confocal",
     "ImmersionMedium": "Air",
@@ -28,18 +28,19 @@
     "TileOverlapY": 0.3,
     "TileLayout": "Snake",
     "NuclearStain": [
-        {"Cycle": 2, "Channel": 1}
+        {"CycleID": 2, "ChannelID": 1}
     ],
     "MembraneStain": [
-        {"Cycle": 2, "Channel": 3},
-        {"Cycle": 3, "Channel": 4}
+        {"CycleID": 2, "ChannelID": 3},
+        {"CycleID": 3, "ChannelID": 4}
     ],
-    "NuclearStainForSegmentation": {"Cycle": 1, "Channel": 1},
-    "MembraneStainForSegmentation": {"Cycle": 3, "Channel": 4},
+    "NuclearStainForSegmentation": {"CycleID": 1, "ChannelID": 1},
+    "MembraneStainForSegmentation": {"CycleID": 3, "ChannelID": 4},
     "ChannelDetails": {
         "ChannelDetailsArray": [{
                 "Name": "DAPI-01",
-                "Cycle": 1,
+                "ChannelID": 1,
+                "CycleID": 1,
                 "Fluorophore": "DAPI",
                 "PassedQC": true,
                 "QCDetails": "if QC failed why",
@@ -51,7 +52,8 @@
             },
             {
                 "Name": "CD31",
-                "Cycle": 1,
+                "ChannelID": 2,
+                "CycleID": 1,
                 "Fluorophore": "Cy5",
                 "PassedQC": true,
                 "QCDetails": "None",
