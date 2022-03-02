@@ -42,6 +42,8 @@
                 {"Cycle": 2, "Channel": 3},
                 {"Cycle": 3, "Channel": 4}
             ],
+            "NuclearStainForSegmentation": {"Cycle": 2, "Channel": 1},
+            "MembraneStainForSegmentation": {"Cycle": 3, "Channel": 4},
             "ChannelDetails": {
                 "ChannelDetailsArray": [
                     {
@@ -103,6 +105,8 @@
         "TileLayout",
         "NuclearStain",
         "MembraneStain",
+        "NuclearStainForSegmentation",
+        "MembraneStainForSegmentation",
         "ChannelDetails"
     ],
     "properties": {
@@ -548,11 +552,95 @@
                 ]
             }
         },
+        "NuclearStainForSegmentation": {
+            "$id": "#/properties/NuclearStainForSegmentation",
+            "type": "object",
+            "title": "The NuclearStainForSegmentation schema",
+            "description": "The cycle and channel ids that will be used for nuclear segmentation.",
+            "default": {},
+            "examples": [
+                {
+                    "Cycle": 2,
+                    "Channel": 1
+                }
+            ],
+            "required": [
+                "Cycle",
+                "Channel"
+            ],
+            "properties": {
+                "Cycle": {
+                    "$id": "#/properties/NuclearStainForSegmentation/properties/Cycle",
+                    "type": "integer",
+                    "minimum": 1,
+                    "title": "The Cycle schema",
+                    "description": "The cycle id that will be used for nuclear segmentation.",
+                    "default": 1,
+                    "examples": [
+                        2
+                    ]
+                },
+                "Channel": {
+                    "$id": "#/properties/NuclearStainForSegmentation/properties/Channel",
+                    "type": "integer",
+                    "minimum": 1,
+                    "title": "The Channel schema",
+                    "description": "The channel id that will be used for nuclear segmentation.",
+                    "default": 1,
+                    "examples": [
+                        1
+                    ]
+                }
+            },
+            "additionalProperties": true
+        },
+        "MembraneStainForSegmentation": {
+            "$id": "#/properties/MembraneStainForSegmentation",
+            "type": "object",
+            "title": "The MembraneStainForSegmentation schema",
+            "description": "The cycle and channel ids that will be used for cell segmentation.",
+            "default": {},
+            "examples": [
+                {
+                    "Cycle": 3,
+                    "Channel": 4
+                }
+            ],
+            "required": [
+                "Cycle",
+                "Channel"
+            ],
+            "properties": {
+                "Cycle": {
+                    "$id": "#/properties/MembraneStainForSegmentation/properties/Cycle",
+                    "type": "integer",
+                    "minimum": 1,
+                    "title": "The Cycle schema",
+                    "description": "The cycle id that will be used for cell segmentation.",
+                    "default": 1,
+                    "examples": [
+                        3
+                    ]
+                },
+                "Channel": {
+                    "$id": "#/properties/MembraneStainForSegmentation/properties/Channel",
+                    "type": "integer",
+                    "minimum": 1,
+                    "title": "The Channel schema",
+                    "description": "The id that will be used for cell segmentation.",
+                    "default": 1,
+                    "examples": [
+                        4
+                    ]
+                }
+            },
+            "additionalProperties": true
+        },
         "ChannelDetails": {
             "$id": "#/properties/ChannelDetails",
             "type": "object",
             "title": "The ChannelDetails schema",
-            "description": "THe acquisition details for each imaging channel.",
+            "description": "The acquisition details for each imaging channel.",
             "default": {},
             "examples": [
                 {
