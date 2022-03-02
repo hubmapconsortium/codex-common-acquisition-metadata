@@ -27,10 +27,13 @@
     "TileOverlapX": 0.3,
     "TileOverlapY": 0.3,
     "TileLayout": "Snake",
-    "NuclearStainCycle": 2,
-    "NuclearStainChannel": 1,
-    "MembraneStainCycle": 2,
-    "MembraneStainChannel": 3,
+    "NuclearStain": [
+        {"Cycle": 2, "Channel": 1}
+    ],
+    "MembraneStain": [
+        {"Cycle": 2, "Channel": 3},
+        {"Cycle": 3, "Channel": 4}
+    ],
     "ChannelDetails": {
         "ChannelDetailsArray": [{
                 "Name": "DAPI-01",
@@ -53,6 +56,18 @@
                 "ExposureTimeMS": 100.0,
                 "ExcitationWavelengthNM": 650,
                 "EmissionWavelengthNM": 660,
+                "Binning": 1,
+                "Gain": 1.0
+            },
+            {
+                "Name": "DAPI-01",
+                "Cycle": 1,
+                "Fluorophore": "DAPI",
+                "PassedQC": true,
+                "QCDetails": "if QC failed why",
+                "ExposureTimeMS": 10.0,
+                "ExcitationWavelengthNM": 350,
+                "EmissionWavelengthNM": 450,
                 "Binning": 1,
                 "Gain": 1.0
             }

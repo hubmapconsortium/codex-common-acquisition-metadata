@@ -35,10 +35,13 @@
             "TileOverlapX": 0.3,
             "TileOverlapY": 0.3,
             "TileLayout": "snake",
-            "NuclearStainCycle": 2,
-            "NuclearStainChannel": 1,
-            "MembraneStainCycle": 2,
-            "MembraneStainChannel": 3,
+            "NuclearStain": [
+                {"Cycle": 2, "Channel": 1}
+            ],
+            "MembraneStain": [
+                {"Cycle": 2, "Channel": 3},
+                {"Cycle": 3, "Channel": 4}
+            ],
             "ChannelDetails": {
                 "ChannelDetailsArray": [
                     {
@@ -98,10 +101,8 @@
         "TileOverlapX",
         "TileOverlapY",
         "TileLayout",
-        "NuclearStainCycle",
-        "NuclearStainChannel",
-        "MembraneStainCycle",
-        "MembraneStainChannel",
+        "NuclearStain",
+        "MembraneStain",
         "ChannelDetails"
     ],
     "properties": {
@@ -413,49 +414,139 @@
                 "Snake"
             ]
         },
-        "NuclearStainCycle": {
-            "$id": "#/properties/NuclearStainCycle",
-            "type": "integer",
-            "minimum": 1,
-            "title": "The NuclearStainCycle schema",
-            "description": "The id of the cycle from which to use nuclear stain.",
-            "default": 1,
+        "NuclearStain": {
+            "$id": "#/properties/NuclearStain",
+            "type": "array",
+            "title": "The NuclearStain schema",
+            "minItems": 1,
+            "uniqueItems": true,
+            "description": "A list of cycle and channel ids that capture stained nuclei.",
+            "default": [],
             "examples": [
-                2
-            ]
+                [
+                    {
+                        "Cycle": 1,
+                        "Channel": 1
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/NuclearStain/items",
+                "allOf": [
+                    {
+                        "$id": "#/properties/NuclearStain/items/allOf/0",
+                        "type": "object",
+                        "title": "The first allOf schema",
+                        "description": "The cycle and channel ids that capture stained nuclei.",
+                        "default": {},
+                        "examples": [
+                            {
+                                "Cycle": 1,
+                                "Channel": 1
+                            }
+                        ],
+                        "required": [
+                            "Cycle",
+                            "Channel"
+                        ],
+                        "properties": {
+                            "Cycle": {
+                                "$id": "#/properties/NuclearStain/items/allOf/0/properties/Cycle",
+                                "type": "integer",
+                                "minimum": 1,
+                                "title": "The Cycle schema",
+                                "description": "The id of the cycle from which to use nuclear stain.",
+                                "default": 1,
+                                "examples": [
+                                    1
+                                ]
+                            },
+                            "Channel": {
+                                "$id": "#/properties/NuclearStain/items/allOf/0/properties/Channel",
+                                "type": "integer",
+                                "minimum": 1,
+                                "title": "The Channel schema",
+                                "description": "The id of the channel that captures stained nuclei.",
+                                "default": 1,
+                                "examples": [
+                                    1
+                                ]
+                            }
+                        },
+                        "additionalProperties": true
+                    }
+                ]
+            }
         },
-        "NuclearStainChannel": {
-            "$id": "#/properties/NuclearStainChannel",
-            "type": "integer",
-            "minimum": 1,
-            "title": "The NuclearStainChannel schema",
-            "description": "The id of the channel that captures stained nuclei.",
-            "default": 1,
+        "MembraneStain": {
+            "$id": "#/properties/MembraneStain",
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "title": "The MembraneStain schema",
+            "description": "A list of cycle and channel ids that capture stained cell membranes.",
+            "default": [],
             "examples": [
-                1
-            ]
-        },
-        "MembraneStainCycle": {
-            "$id": "#/properties/MembraneStainCycle",
-            "type": "integer",
-            "minimum": 1,
-            "title": "The MembraneStainCycle schema",
-            "description": "The id of the cycle from which to use cell membrane stain.",
-            "default": 1,
-            "examples": [
-                2
-            ]
-        },
-        "MembraneStainChannel": {
-            "$id": "#/properties/MembraneStainChannel",
-            "type": "integer",
-            "minimum": 1,
-            "title": "The MembraneStainChannel schema",
-            "description": "The id of the channel that captures stained cell membranes.",
-            "default": 1,
-            "examples": [
-                3
-            ]
+                [
+                    {
+                        "Cycle": 2,
+                        "Channel": 3
+                    },
+                    {
+                        "Cycle": 3,
+                        "Channel": 4
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/MembraneStain/items",
+                "allOf": [
+                    {
+                        "$id": "#/properties/MembraneStain/items/allOf/0",
+                        "type": "object",
+                        "title": "The first allOf schema",
+                        "description": "The cycle and channel ids that capture stained cell membranes.",
+                        "default": {},
+                        "examples": [
+                            {
+                                "Cycle": 2,
+                                "Channel": 3
+                            }
+                        ],
+                        "required": [
+                            "Cycle",
+                            "Channel"
+                        ],
+                        "properties": {
+                            "Cycle": {
+                                "$id": "#/properties/MembraneStain/items/allOf/0/properties/Cycle",
+                                "type": "integer",
+                                "minimum": 1,
+                                "title": "The Cycle schema",
+                                "description": "The id of the cycle that captures stained cell membranes.",
+                                "default": 1,
+                                "examples": [
+                                    2
+                                ]
+                            },
+                            "Channel": {
+                                "$id": "#/properties/MembraneStain/items/allOf/0/properties/Channel",
+                                "type": "integer",
+                                "minimum": 1,
+                                "title": "The Channel schema",
+                                "description": "The id of the channel that captures stained cell membranes.",
+                                "default": 1,
+                                "examples": [
+                                    3
+                                ]
+                            }
+                        },
+                        "additionalProperties": true
+                    }
+                ]
+            }
         },
         "ChannelDetails": {
             "$id": "#/properties/ChannelDetails",
@@ -500,6 +591,8 @@
                 "ChannelDetailsArray": {
                     "$id": "#/properties/ChannelDetails/properties/ChannelDetailsArray",
                     "type": "array",
+                    "minItems": 1,
+                    "uniqueItems": true,
                     "title": "The ChannelDetailsArray schema",
                     "description": "An explanation about the purpose of this instance.",
                     "default": [],
