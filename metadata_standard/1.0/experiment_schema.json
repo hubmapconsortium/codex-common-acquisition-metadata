@@ -225,7 +225,7 @@
             "minimum": 0.0,
             "title": "The ResolutionX schema",
             "description": "Physical size of a pixel.",
-            "default": 0,
+            "default": 0.0,
             "examples": [
                 300.0
             ]
@@ -473,7 +473,7 @@
                                 "type": "integer",
                                 "minimum": 1,
                                 "title": "The Channel schema",
-                                "description": "The id of the channel that captures stained nuclei.",
+                                "description": "The id of the channel, inside the cycle, that captures stained nuclei.",
                                 "default": 1,
                                 "examples": [
                                     1
@@ -587,7 +587,7 @@
                     "type": "integer",
                     "minimum": 1,
                     "title": "The Channel schema",
-                    "description": "The channel id that will be used for nuclear segmentation.",
+                    "description": "The channel id, inside the cycle, that will be used for nuclear segmentation.",
                     "default": 1,
                     "examples": [
                         1
@@ -629,7 +629,7 @@
                     "type": "integer",
                     "minimum": 1,
                     "title": "The Channel schema",
-                    "description": "The id that will be used for cell segmentation.",
+                    "description": "The channel id, inside the cycle, that will be used for cell segmentation.",
                     "default": 1,
                     "examples": [
                         4
@@ -772,7 +772,7 @@
                                         "type": "integer",
                                         "minimum": 1,
                                         "title": "The ChannelID schema",
-                                        "description": "The id of the imaging channel.",
+                                        "description": "The id of the imaging channel inside the cycle.",
                                         "default": 1,
                                         "examples": [
                                             1
