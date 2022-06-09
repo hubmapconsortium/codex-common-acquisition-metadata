@@ -1,16 +1,29 @@
+import argparse
 from pathlib import Path
 import json
 import jsonschema
 
-cur_dir = Path().resolve()
-meta_dir = Path("metadata_standard/1.0")
-exp_schema_path = cur_dir / meta_dir / "dataset_schema.json"
-with open(exp_schema_path, "r") as s:
-    exp_schema = json.load(s)
 
-exp_path = cur_dir / meta_dir / "dataset.json"
-with open(exp_path, "r") as s:
-    experiment = json.load(s)
+def read_json(path: Path):
+    with open(path, "r") as s:
+        obj = json.load(s)
+    return obj
 
-# res = None if successful
-jsonschema.validate(experiment, exp_schema)
+
+def main(schema_path, meta_path):
+    schema = read_json(schema_path)
+    meta = read_json(meta_path)
+    try:
+        jsonschema.validate(meta, schema)
+        print("Validated successfully")
+    except Exception as e:
+        print(e)
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--schema", type=Path, help="Path to the metadata schema")
+    parser.add_argument("--meta", type=Path, help="Path to the metadata for validation")
+    args = parser.parse_args()
+
+    main(args.schema, args.meta)
