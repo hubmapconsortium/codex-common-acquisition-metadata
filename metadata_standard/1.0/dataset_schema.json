@@ -290,7 +290,7 @@
             "type": "integer",
             "multipleOf": 2,
             "title": "The BitDepth schema",
-            "description": "Size of the tile horizontal direction in pixels of bits per pixel.",
+            "description": "Bits per pixel.",
             "default": 16,
             "examples": [
                 16
